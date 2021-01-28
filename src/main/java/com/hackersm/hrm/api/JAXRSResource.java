@@ -20,7 +20,7 @@ import com.hackersm.hrm.domain.Person;
 
 
 
-//http://localhost:9093/personalservice/v1/persons
+//http://localhost:9093/hrm/v1/persons
 
 @Path("persons")
 public class JAXRSResource {
@@ -29,6 +29,25 @@ public class JAXRSResource {
 	private PersonalResourceDelegate personalResourceDelegate;
 	private static final Logger logger = LoggerFactory.getLogger(JAXRSResource.class);
 	
+	/*@Inject
+	private SubjectsResourceDelegate subjectsResourceDelegate;
+	
+	//subjects list
+	@GET
+	@Path("/subjects")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getSubjectsData(@Context UriInfo uriInfo) {
+		logger.info("get subjectsData");
+		Response response = null;
+		try {
+			response = subjectsResourceDelegate.getSubjectsList();
+			return response;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			logger.info(ex.getMessage());
+		}
+		return response;
+	}*/
 	
 	//servicesData
 	@GET

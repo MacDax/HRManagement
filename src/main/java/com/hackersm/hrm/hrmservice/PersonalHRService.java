@@ -42,7 +42,6 @@ public class PersonalHRService {
 			boolean result = getPersonalDataDelegate.savePersonsData(dataList);
 			return result;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;

@@ -13,6 +13,7 @@ public class V1JaxRsApplication extends javax.ws.rs.core.Application {
 	
 	public V1JaxRsApplication() {
 		prototypeResources.add(JAXRSResource.class);
+		prototypeResources.add(JAXQuestionsResource.class);
 	}
 	
 	public Set<Class<?>> getClasses() {

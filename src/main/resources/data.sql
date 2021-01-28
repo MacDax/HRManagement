@@ -8,3 +8,12 @@ insert into rolenames(rolename) values('student');
 
 insert into personsroles(roleid, personId) values(1, 1);
 --insert into personsroles(roleid, personId) values(2, 33);
+
+insert into subjects(subjectcode, subjectname) values(101, 'Maths-1');
+insert into subjects(subjectcode, subjectname) values(102, 'English-1');
+
+insert into  exquestiontypes(exquestiontype_code, question_type) values(10, 'true/false');
+
+--insert into  questiontypes(questiontype_code, question_type) values(10, 'true/false');
+--insert into  questiontypes(questiontype_code, question_type) values(20, 'multiple choice');
+--insert into  questiontypes(questiontype_code, question_type) values(30, 'Fill-in-the-blank');
