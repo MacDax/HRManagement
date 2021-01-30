@@ -19,6 +19,23 @@ private static final Logger logger = LoggerFactory.getLogger(JAXQuestionsResourc
 	
 	@Inject
 	private SubjectsResourceDelegate subjectsResourceDelegate;
+	@Inject
+	private ExQuestionsResourceDelegate questionsResourceDelegate;
+	
+	@GET
+	@Path("/questions")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getExQuestionsData() {
+		logger.info("questions : ");
+		Response response = null;
+		try {
+			response = questionsResourceDelegate.getQuestionsDataResponse();
+			return response;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return response;
+	}
 	
 	//subjects list
 	@GET
@@ -29,6 +46,22 @@ private static final Logger logger = LoggerFactory.getLogger(JAXQuestionsResourc
 		Response response = null;
 		try {
 			response = subjectsResourceDelegate.getSubjectsList();
+			return response;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			logger.info(ex.getMessage());
+		}
+		return response;
+	}
+	
+	@GET
+	@Path("/questiontypes")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getQuestionTypeData() {
+		logger.info("get questiontypes");
+		Response response = null;
+		try {
+			response = subjectsResourceDelegate.getQuestionTypes();
 			return response;
 		}catch(Exception ex) {
 			ex.printStackTrace();
